@@ -12,6 +12,7 @@ Você pode ver o projeto funcionando ao vivo no seguinte link:
 ### Frontend
 
 -   **React.js**: Biblioteca JavaScript para criação da interface de usuário.
+-   **Vite**: Ferramenta de construção de projetos web que visa agilizar o desenvolvimento.
 -   **JavaScript**: Linguagem principal para desenvolvimento do frontend.
 -   **CSS**: Estilização da interface, garantindo um design moderno e responsivo.
 
