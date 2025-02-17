@@ -1,7 +1,7 @@
-// JavaScript Assincrono
-// await async
-// Fullfilled
 //mongodb+srv://islaianelribeiro:<db_password>@cluster0.r4acz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+// "mongodb+srv://islaianelribeiro:WCovrJ3sIjuALZih@cluster0.r4acz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+// connect.js
 import { MongoClient } from "mongodb";
 
 const URI =
