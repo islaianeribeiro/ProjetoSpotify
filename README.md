@@ -4,6 +4,9 @@
 
 O **Clone do Spotify** é um projeto Full Stack desenvolvido durante o curso da Hashtag Programação. Esse projeto permitiu aplicar diversas tecnologias para criar uma plataforma de streaming de música inspirada no Spotify.
 
+Você pode ver o projeto funcionando ao vivo no seguinte link:
+[Link do Projeto](https://projetospotify.onrender.com/)
+
 ## Tecnologias Utilizadas
 
 ### Frontend
