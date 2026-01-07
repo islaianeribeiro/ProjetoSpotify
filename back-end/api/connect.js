@@ -1,13 +1,12 @@
-//mongodb+srv://islaianelribeiro:<db_password>@cluster0.r4acz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-// "mongodb+srv://islaianelribeiro:WCovrJ3sIjuALZih@cluster0.r4acz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
 // connect.js
 import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
 
-const URI =
-    "mongodb+srv://islaianelribeiro:WCovrJ3sIjuALZih@cluster0.r4acz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+dotenv.config();
 
-const client = new MongoClient(URI);
+const client = new MongoClient(process.env.MONGO_URI);
+
+await client.connect();
 
 export const db = client.db("spotifyAula");
 // const songCollection = await db.collection("songs").find({}).toArray();
