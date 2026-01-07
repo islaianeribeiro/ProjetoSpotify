@@ -1,130 +1,215 @@
-# Documentação - Clone do Spotify
+# 🎧 Clone do Spotify — Aplicação Full Stack
 
-## Visão Geral
+Aplicação **Full Stack inspirada no Spotify**, desenvolvida para simular uma plataforma de streaming de música, com foco em **integração entre front-end e back-end**, consumo de API e reprodução de áudio.
+O projeto foi criado como parte de um curso prático, aplicando conceitos reais de desenvolvimento web.
 
-O **Clone do Spotify** é um projeto Full Stack desenvolvido durante o curso da Hashtag Programação. Esse projeto permitiu aplicar diversas tecnologias para criar uma plataforma de streaming de música inspirada no Spotify.
+<div align="center">
+  <img src="./front-end/public/screenshot-home.png" alt="Tela inicial da aplicação." width="100%"/>
+  <img src="./front-end/public/screenshot-music-album.png" alt="Tela com detalhes do artista e suas músicas." width="100%"/>
+  <img src="./front-end/public/screenshot-music-player.png" alt="Página individual da música com player funcional." width="100%"/>
+</div>
 
-Você pode ver o projeto funcionando ao vivo no seguinte link:
-[Link do Projeto](https://projetospotify.onrender.com/)
+🔗 **Projeto online:** [https://projetospotify.onrender.com/](https://projetospotify.onrender.com/)
 
-## Tecnologias Utilizadas
+---
 
-### Frontend
+## 🚀 Tecnologias Utilizadas
 
--   **React.js**: Biblioteca JavaScript para criação da interface de usuário.
--   **Vite**: Ferramenta de construção de projetos web que visa agilizar o desenvolvimento.
--   **JavaScript**: Linguagem principal para desenvolvimento do frontend.
--   **CSS**: Estilização da interface, garantindo um design moderno e responsivo.
+### Front-end
 
-### Backend
+- **React.js** — Construção da interface com componentes reutilizáveis.
+- **Vite** — Ambiente de desenvolvimento rápido e bundling.
+- **JavaScript (ES6+)** — Lógica da aplicação e interatividade.
+- **CSS** — Estilização da interface com foco em layout responsivo.
 
--   **Node.js**: Ambiente de execução para JavaScript no servidor.
--   **Express**: Framework para Node.js que facilita a criação de rotas e manipulação de requisições.
+### Back-end
+
+- **Node.js** — Ambiente de execução JavaScript no servidor.
+- **Express** — Criação de API REST e gerenciamento de rotas.
 
 ### Banco de Dados
 
--   **MongoDB**: Banco de dados NoSQL utilizado para armazenar informações sobre as playlists e músicas do sistema.
+- **MongoDB** — Armazenamento de dados de artistas, músicas e playlists.
 
-### API
+### Comunicação
 
--   Foi desenvolvido no curso uma **API RESTful** para gerenciar os dados do aplicativo, permitindo operações como:
-    -   Reprodução de áudio e interação com conteúdo.
-    -   Informações de 20 artistas e 200 músicas.
-
-## Funcionalidades Principais
-
--   **Tela Home**:
-
-    -   Seção para artistas populares.
-    -   Seção para músicas populares.
-    -   Botão "Mostrar Mais" em cada seção para visualizar todas as músicas ou todos os artistas.
-
--   **Navegação e Interface**:
-
-    -   **Header**: Exibe o logotipo do Spotify e permite voltar à página inicial.
-    -   **ItemList**: Exibe listas de artistas ou músicas populares com botão para ver mais.
-    -   **Main**: Renderiza listas de artistas e músicas populares com base no tipo de exibição.
-
--   **Páginas e Rotas**:
-
-    -   **Home**: Exibe artistas e músicas populares.
-    -   **Artists**: Lista os artistas populares.
-    -   **Songs**: Lista as músicas populares.
-    -   **Artist**: Exibe detalhes do artista, incluindo suas músicas e um botão de play que escolhe músicas aleatórias do álbum, quando é clicado.
-    -   **Song**: Exibe detalhes da música, capa, artista e um player funcional.
-
--   **Reprodução de Músicas**:
-    -   **Player**:
-        -   Permite reproduzir e pausar músicas.
-        -   Possui controles para avançar e retroceder faixas.
-        -   Exibe progresso da música baseado no tempo atual e na duração total.
-        -   A mesma faixa toca em todas as músicas listadas do álbum correspondente.
+- **Axios** — Requisições HTTP entre front-end e API.
 
 ---
 
-## Arquivos da API
+## 📌 Funcionalidades Principais
 
-A API é construída com **Express** e conecta-se ao **MongoDB** para gerenciar os dados de artistas e músicas. Abaixo estão os detalhes dos arquivos principais da API.
+### Home
 
-### `server.js`
+- Exibição de artistas populares.
+- Exibição de músicas populares.
+- Botão “Mostrar mais” para visualizar listas completas.
 
-O arquivo `server.js` configura o servidor Express, lida com as rotas de dados de artistas e músicas e serve os arquivos estáticos do frontend.
+### Navegação e Interface
 
-### `connect.js`
+- Header com logotipo e navegação para a página inicial.
+- Listagem dinâmica de artistas e músicas.
+- Interface inspirada no Spotify, com foco em usabilidade.
 
-Este arquivo configura a conexão com o MongoDB, utilizando a URL de conexão para se conectar ao banco de dados.
+### Páginas e Rotas
 
-### `insertMany.js`
+- **Home** — Artistas e músicas populares.
+- **Artists** — Lista completa de artistas.
+- **Songs** — Lista completa de músicas.
+- **Artist** — Detalhes do artista e suas músicas.
+- **Song** — Página individual da música com player funcional.
 
-Este arquivo é utilizado para inserir os dados de artistas e músicas no banco de dados. Ele utiliza arrays pré-definidos com informações de artistas e músicas para popular as coleções no MongoDB.
+### Reprodução de Músicas
 
-#### Endpoints da API
+- Player com controles de:
 
-A API possui os seguintes endpoints:
+  - Play e pause
+  - Avançar e retroceder faixas
 
--   **`GET /api/artists`**: Retorna uma lista de todos os artistas no banco de dados.
--   **`GET /api/songs`**: Retorna uma lista de todas as músicas no banco de dados.
-
-Esses endpoints são responsáveis por fornecer os dados para o frontend do projeto.
-
----
-
-## Comunicação Frontend e Backend
-
-O **frontend** se comunica com o **backend** através de requisições HTTP utilizando a biblioteca **Axios**. As requisições são feitas para os endpoints da API, que retornam os dados de artistas e músicas para o frontend.
-
-### `api.js`
-
-O arquivo `api.js` é responsável por fazer as requisições ao backend e buscar os dados de artistas e músicas. Ele utiliza o Axios para realizar as requisições GET para os endpoints da API, e os dados retornados são armazenados em arrays que são exportados para uso no frontend.
-
-#### Como funciona
-
--   **Requisições GET**: O frontend faz requisições GET para os endpoints `/api/artists` e `/api/songs` do backend.
--   **Armazenamento dos Dados**: Os dados recebidos são armazenados nas variáveis `artistArray` e `songsArray`.
--   **Integração com o Frontend**: Esses arrays são usados para exibir os artistas e músicas na interface do usuário.
-
-Esse fluxo garante que o frontend obtenha as informações atualizadas do backend de forma dinâmica, sem a necessidade de recarregar a página.
+- Barra de progresso baseada no tempo da música.
+- Reprodução contínua das músicas do álbum selecionado.
 
 ---
 
-## Instalação e Configuração
+## 🧠 Destaques Técnicos
 
-1. Clone este repositório:
-    ```sh
-    git clone https://github.com/islaianeribeiro/ProjetoSpotify.git
-    ```
-2. Acesse a pasta do projeto:
-    ```sh
-    cd ProjetoSpotify
-    ```
-3. Construa e inicie o projeto com os seguintes comandos:
-    ```sh
-    npm run build
-    npm run start
-    ```
-    - O script **build** instala as dependências do backend e frontend e executa a build do frontend.
-    - O script **start** inicia o servidor backend.
+- Criação de **API REST com Express** para fornecimento de dados ao front-end.
+- Integração completa entre **React e backend Node.js**.
+- Uso do **MongoDB** para persistência de dados.
+- Consumo de API utilizando **Axios**.
+- Organização do projeto separando responsabilidades entre front-end, back-end e banco de dados.
+- Simulação de fluxo real de uma plataforma de streaming.
 
-## Considerações Finais
+---
 
-Este projeto foi uma excelente oportunidade para aprimorar habilidades Full Stack e compreender a estrutura de uma plataforma de streaming de música. Pretendo continuar aprimorando a aplicação com novas funcionalidades e melhorias.
+## 🗂️ Organização do Projeto
+
+```
+📁 back-end
+├─ 📁 api
+│  ├─ 📄 connect.js        # Configuração da conexão com o MongoDB
+│  ├─ 📄 insertMany.js     # Script para inserir artistas e músicas no banco de dados
+│  └─ 📄 server.js         # Inicialização do servidor e definição da API
+│
+├─ 📄 .env                 # Variáveis de ambiente (MongoDB URI)
+
+📁 front-end
+├─ 📁 api                  # Arquivos relacionados à comunicação com a API
+├─ 📁 src
+│  ├─ 📁 assets
+│  │  ├─ 📁 database       # Dados do projeto
+│  │  └─ 📁 logo           # Logo da aplicação
+│  │
+│  ├─ 📁 components        # Componentes reutilizáveis da interface
+│  ├─ 📁 pages             # Páginas da aplicação
+│  ├─ 📄 App.jsx           # Componente raiz do React
+│  ├─ 📄 main.jsx          # Ponto de entrada da aplicação
+│  └─ 📄 index.css         # Estilos globais
+
+```
+
+---
+
+## 🛠️ Como Rodar o Projeto Localmente
+
+### 1️⃣ Clone o repositório
+
+```bash
+git clone https://github.com/islaianeribeiro/ProjetoSpotify.git
+```
+
+```bash
+cd ProjetoSpotify
+```
+
+---
+
+## 🔐 Configuração do Banco de Dados
+
+Este projeto utiliza **MongoDB** para armazenar os dados de artistas e músicas.
+
+### Pré-requisitos
+
+- Conta no **MongoDB Atlas**
+- Cluster ativo
+- Node.js instalado
+
+### Variáveis de Ambiente
+
+Crie um arquivo `.env` na pasta do backend e adicione a string de conexão do MongoDB:
+
+```env
+MONGODB_URI=sua_uri_do_mongodb_aqui
+```
+
+> 🔒 O arquivo `.env` deve estar listado no `.gitignore` para evitar o vazamento de dados sensíveis.
+
+---
+
+## 📥 Inserção dos Dados no Banco
+
+O projeto já inclui um script para popular o banco de dados com artistas e músicas de exemplo.
+
+Execute o comando abaixo após configurar o MongoDB:
+
+```bash
+node insertMany.js
+```
+
+Esse script irá inserir:
+
+- Aproximadamente **20 artistas**
+- Cerca de **200 músicas**
+
+Esses dados são consumidos pela API e exibidos dinamicamente no frontend.
+
+---
+
+## 🚀 Executando a Aplicação
+
+Após configurar o banco e inserir os dados, execute:
+
+```bash
+npm run build
+npm run start
+```
+
+Após iniciar, o projeto estará disponível no navegador.
+
+---
+
+## 🌐 Comunicação Frontend e Backend
+
+O frontend se comunica com o backend por meio de uma **API REST**, utilizando **Axios**.
+
+### Endpoints Disponíveis
+
+- `GET /api/artists` — retorna a lista de artistas
+- `GET /api/songs` — retorna a lista de músicas
+
+---
+
+## 📌 Status do Projeto
+
+- ✔️ Projeto funcional e publicado
+- 🔧 Possíveis melhorias futuras:
+
+  - Autenticação de usuários
+  - Criação de playlists personalizadas
+  - Melhoria de performance do player
+  - Interface ainda mais próxima do Spotify real
+
+---
+
+## 👩‍💻 Desenvolvido por
+
+**Islaiane Ribeiro**
+Front-End Developer
+
+🔗 [https://www.linkedin.com/in/islaianeribeiro](https://www.linkedin.com/in/islaianeribeiro)
+
+---
+
+## 📝 Licença
+
+MIT © 2025 — Sinta-se à vontade para usar como base para estudos e projetos pessoais.
